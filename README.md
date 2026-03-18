@@ -50,17 +50,7 @@ git config --global --list  # name/email の確認
 ssh -T git@github.com       # GitHub SSH接続確認
 ```
 
-## 2026/03/18 学習記録 — Next.js 環境構築
 
-### やったこと
-- Next.jsプロジェクト（my-app）を作成
-- npm run dev で開発サーバーを起動
-- localhost:3000 でブラウザ表示を確認
-- page.tsx を編集してホットリロードを体験
-
-### 気づいたこと
-- ファイル保存と同時にブラウザが自動更新される
-- PHPのときと違って手動リロード不要
 
 ## 2026/03/18 学習記録 — Next.js 環境構築
 ### やったこと
@@ -69,6 +59,7 @@ ssh -T git@github.com       # GitHub SSH接続確認
 - npm run dev で開発サーバーを起動
 - localhost:3000 でブラウザ表示を確認
 - page.tsx を編集してホットリロードを体験
+- READMEへの情報編集と再push
 
 ### 気づいたこと
 
