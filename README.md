@@ -62,27 +62,28 @@ ssh -T git@github.com       # GitHub SSH接続確認
 - ファイル保存と同時にブラウザが自動更新される
 - PHPのときと違って手動リロード不要
 
-2026/03/18 学習記録 — Next.js 環境構築
-やったこと
+## 2026/03/18 学習記録 — Next.js 環境構築
+### やったこと
 
-Next.jsプロジェクト（my-app）を作成
-npm run dev で開発サーバーを起動
-localhost:3000 でブラウザ表示を確認
-page.tsx を編集してホットリロードを体験
+- Next.jsプロジェクト（my-app）を作成
+- npm run dev で開発サーバーを起動
+- localhost:3000 でブラウザ表示を確認
+- page.tsx を編集してホットリロードを体験
 
-気づいたこと
+### 気づいたこと
 
-ファイル保存と同時にブラウザが自動更新される
-PHPのときと違って手動リロード不要
+- ファイル保存と同時にブラウザが自動更新される
+- PHPのときと違って手動リロード不要
 
 
-詰まったところ・エラーと解決
-エラー1：npx コマンドが見つからない
+### 詰まったところ・エラーと解決
+**エラー1：npx コマンドが見つからない**
+```
 zsh: command not found: npx
-
-原因：新しいターミナルを開いたことで fnm のパスが引き継がれていなかった
-解決：以下を実行してパスを反映、さらに ~/.zshrc に追記して恒久対応
-
+```
+- 原因：新しいターミナルを開いたことで fnm のパスが引き継がれていなかった
+- 解決：以下を実行してパスを反映、さらに ~/.zshrc に追記して恒久対応
+```
 basheval "$(fnm env --use-on-cd)"
 echo 'eval "$(fnm env --use-on-cd)"' >> ~/.zshrc
 source ~/.zshrc
@@ -93,24 +94,27 @@ source ~/.zshrc
 zsh: command not found: fnm
 zsh: command not found: node
 zsh: command not found: npx
-
-原因：前回のセッションでインストールしたが、新しいターミナルに反映されていなかった
-解決：brew で fnm を再インストールし、Node.js も再度セットアップ
-
+```
+- 原因：前回のセッションでインストールしたが、新しいターミナルに反映されていなかった
+- 解決：brew で fnm を再インストールし、Node.js も再度セットアップ
+```
 bashbrew install fnm
 echo 'eval "$(fnm env --use-on-cd)"' >> ~/.zshrc
 source ~/.zshrc
 fnm install 22
 fnm use 22
 fnm default 22
-詰まった点：VS Code内ターミナルの開き方（JIS配列Mac）
+```
+- 詰まった点：VS Code内ターミナルの開き方（JIS配列Mac）
 
-Control + ``  `` `（バッククォート）はJIS配列では押しにくい
-解決：メニューの「ターミナル」→「新しいターミナル」から開く
+- Control + ``  `` `（バッククォート）はJIS配列では押しにくい
+- 解決：メニューの「ターミナル」→「新しいターミナル」から開く
 
 
-確認コマンドまとめ
+### 確認コマンドまとめ
+```
 bashnode --version     # v22.x.x
 npx --version      # バージョン確認
 npm run dev        # 開発サーバー起動
 # 停止は Control + C
+```
