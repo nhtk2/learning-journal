@@ -53,6 +53,7 @@ ssh -T git@github.com       # GitHub SSH接続確認
 
 
 ## 2026/03/18 学習記録 — Next.js 環境構築
+
 ### やったこと
 
 - Next.jsプロジェクト（my-app）を作成
@@ -66,8 +67,10 @@ ssh -T git@github.com       # GitHub SSH接続確認
 - ファイル保存と同時にブラウザが自動更新される
 - PHPのときと違って手動リロード不要
 
+---
 
 ### 詰まったところ・エラーと解決
+
 **エラー1：npx コマンドが見つからない**
 ```
 zsh: command not found: npx
@@ -101,6 +104,7 @@ fnm default 22
 - Control + ``  `` `（バッククォート）はJIS配列では押しにくい
 - 解決：メニューの「ターミナル」→「新しいターミナル」から開く
 
+---
 
 ### 確認コマンドまとめ
 ```
@@ -109,3 +113,5 @@ npx --version      # バージョン確認
 npm run dev        # 開発サーバー起動
 # 停止は Control + C
 ```
+
+---
