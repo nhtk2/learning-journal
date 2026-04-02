@@ -127,7 +127,7 @@ npm run dev        # 開発サーバー起動
 ---
 
 ### 学んだ概念
-# ファイルベースルーティング
+**ファイルベースルーティング**
 - app/ 配下にフォルダを作り page.tsx を置くだけでURLになる
 - 例：app/about/page.tsx → localhost:3000/about
 
@@ -138,7 +138,7 @@ mkdir app/about
 # VS Codeのファイルツリーで app/about を右クリック → 新しいファイル → page.tsx
 ```
 
-# Linkコンポーネント
+**Linkコンポーネント**
 - Next.js専用のリンク。通常の <a> タグより高速なページ遷移ができる
 ```
 tsx
@@ -147,20 +147,20 @@ import Link from "next/link"
 <Link href="/about">Aboutページへ</Link>
 ```
 
-# Tailwind CSSクラスの基本
+**Tailwind CSSクラスの基本**
 - text-4xl font-bold → 大きな太文字
 - mb-8 → 下マージン
 - text-gray-600 → グレーのテキスト
 - hover:bg-gray-800 → ホバー時に背景色変化
 
-# 開発サーバーの起動・停止
+**開発サーバーの起動・停止**
 ```
 bash# 起動
 cd ~/dev/my-app
 npm run dev
 ```
 
-# 停止
+**停止**
 ```
 Control + C
 学習記録のpush
@@ -170,7 +170,7 @@ git commit -m "コミットメッセージ"
 git push
 ```
 
-### 作成・編集したファイル
+**作成・編集したファイル**
 ```
 my-app/
 ├── app/
