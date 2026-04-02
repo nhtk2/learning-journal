@@ -72,13 +72,13 @@ ssh -T git@github.com       # GitHub SSH接続確認
 ### 詰まったところ・エラーと解決
 
 **エラー1：npx コマンドが見つからない**
-```
-zsh: command not found: npx
+```zsh
+command not found: npx
 ```
 - 原因：新しいターミナルを開いたことで fnm のパスが引き継がれていなかった
 - 解決：以下を実行してパスを反映、さらに ~/.zshrc に追記して恒久対応
-```
-basheval "$(fnm env --use-on-cd)"
+```bash
+eval "$(fnm env --use-on-cd)"
 echo 'eval "$(fnm env --use-on-cd)"' >> ~/.zshrc
 source ~/.zshrc
 ```
@@ -91,8 +91,8 @@ zsh: command not found: npx
 ```
 - 原因：前回のセッションでインストールしたが、新しいターミナルに反映されていなかった
 - 解決：brew で fnm を再インストールし、Node.js も再度セットアップ
-```
-bashbrew install fnm
+```bash
+brew install fnm
 echo 'eval "$(fnm env --use-on-cd)"' >> ~/.zshrc
 source ~/.zshrc
 fnm install 22
@@ -107,8 +107,8 @@ fnm default 22
 ---
 
 ### 確認コマンドまとめ
-```
-bashnode --version     # v22.x.x
+```bash
+node --version     # v22.x.x
 npx --version      # バージョン確認
 npm run dev        # 開発サーバー起動
 # 停止は Control + C
@@ -131,8 +131,7 @@ npm run dev        # 開発サーバー起動
 - app/ 配下にフォルダを作り page.tsx を置くだけでURLになる
 - 例：app/about/page.tsx → localhost:3000/about
 
-```
-bash
+```bash
 # aboutフォルダを作成
 mkdir app/about
 # VS Codeのファイルツリーで app/about を右クリック → 新しいファイル → page.tsx
@@ -140,8 +139,7 @@ mkdir app/about
 
 **Linkコンポーネント**
 - Next.js専用のリンク。通常の <a> タグより高速なページ遷移ができる
-```
-tsx
+```tsx
 import Link from "next/link"
 
 <Link href="/about">Aboutページへ</Link>
@@ -154,17 +152,18 @@ import Link from "next/link"
 - hover:bg-gray-800 → ホバー時に背景色変化
 
 **開発サーバーの起動・停止**
-```
-bash# 起動
+```bash
+# 起動
 cd ~/dev/my-app
 npm run dev
+
+# 停止
+Control + C
 ```
 
-**停止**
-```
-Control + C
-学習記録のpush
-bashcd ~/dev/learning-journal
+**学習記録のpush**
+```bash
+cd ~/dev/learning-journal
 git add .
 git commit -m "コミットメッセージ"
 git push
